@@ -13,20 +13,22 @@ public class PointTest {
 
     @Before
     public void before() {
-        pt = new Point(2, 3);
+        pt = new Point(2, 3, 4);
         pt2 = new Point(2);
     }
 
     @Test
-    public void testPointIntInt(){
+    public void testPointIntIntInt(){
         assertEquals( pt.getX(),2);
         assertEquals( pt.getY(),3);
+        assertEquals( pt.getZ(),4);
     }
 
     @Test
     public void testPointInt() {
         assertEquals( pt2.getX(),2);
         assertEquals( pt2.getY(),2);
+        assertEquals( pt2.getZ(),2);
     }
 
     @Test
@@ -34,11 +36,12 @@ public class PointTest {
         pt = new Point();
         assertEquals( pt.getX(),0);
         assertEquals( pt.getY(),0);
+        assertEquals( pt.getZ(),0);
     }
 
     @Test
     public void testModule() {
-        assertEquals(3.6055, pt.module(), 10e-5);
+        assertEquals(5.3851, pt.module(), 10e-5);
     }
 
     @Test
@@ -48,9 +51,10 @@ public class PointTest {
 
     @Test
     public void testTranslateOrigin() {
-        this.pt.translateOrigin(new Point(1, 1));
+        this.pt.translateOrigin(new Point(1, 1, 1));
         assertEquals( pt.getX(),1);
         assertEquals( pt.getY(),2);
+        assertEquals( pt.getZ(),3);
     }
 
     @Test
@@ -65,7 +69,7 @@ public class PointTest {
 
     @Test
     public void testToString() {
-        assertEquals("Point["+pt.getX()+","+pt.getY()+"]","Point[2,3]");
+        assertEquals("Point["+pt.getX()+","+pt.getY()+","+pt.getZ()+"]","Point[2,3,4]");
     }
 
 }
