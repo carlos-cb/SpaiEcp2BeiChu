@@ -65,4 +65,14 @@ public class Fraction {
     	return new Fraction(((this.getNumerator()*fr.getDenominator())+(fr.getNumerator()*this.getDenominator())), (this.getDenominator()*fr.getDenominator()));
     }
     
+    public Fraction mayor(Fraction frac1) {
+    	double resp1 = frac1.getNumerator() / frac1.getDenominator();
+    	double resp2 = this.getNumerator() / this.getDenominator();
+    	if (resp1 < resp2) {
+    	return this;
+    	} else {
+    	return frac1;
+    	}
+    }
+    
 }
