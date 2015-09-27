@@ -42,5 +42,13 @@ public class FractionTest {
     public void testGetDenominator() {
         assertEquals(fra.getDenominator(), 2);
     }
+    
+    @Test
+    public void testSuma() {
+    	this.fra =  new Fraction(6,3);
+    	Fraction frt = this.fra.sumarFracciones(new Fraction(1,4));
+    	assertEquals(27, frt.getNumerator());
+    	assertEquals(12, frt.getDenominator());
+    }
 
 }

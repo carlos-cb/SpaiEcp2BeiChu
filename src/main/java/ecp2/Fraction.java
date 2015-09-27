@@ -61,4 +61,8 @@ public class Fraction {
         return denominator;
     }
     
+    public Fraction sumarFracciones(Fraction fr) {
+    	return new Fraction(((this.getNumerator()*fr.getDenominator())+(fr.getNumerator()*this.getDenominator())), (this.getDenominator()*fr.getDenominator()));
+    }
+    
 }
