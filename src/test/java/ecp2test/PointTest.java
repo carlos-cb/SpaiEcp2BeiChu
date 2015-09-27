@@ -1,20 +1,22 @@
 package ecp2test;
 
 import static org.junit.Assert.*;
+import ecp2.Point;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import ecp2.Point;
 
 public class PointTest {
     private Point pt;
     private Point pt2;
+    private Point pt3;
 
     @Before
     public void before() {
         pt = new Point(2, 3, 4);
         pt2 = new Point(2);
+        pt3 = new Point(2, 3);
     }
 
     @Test
@@ -70,6 +72,13 @@ public class PointTest {
     @Test
     public void testToString() {
         assertEquals("Point["+pt.getX()+","+pt.getY()+","+pt.getZ()+"]","Point[2,3,4]");
+    }
+    
+    @Test
+    public void TestLimit(){
+    pt3 = new Point(-2, 200);
+    assertEquals(0, pt3.getX());
+    assertEquals(100, pt3.getY());
     }
 
 }
