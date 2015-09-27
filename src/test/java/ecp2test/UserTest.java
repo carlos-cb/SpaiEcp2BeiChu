@@ -11,42 +11,29 @@ import ecp2.User;
 
 public class UserTest {
     
-    private User us;
+    private User usr;
     
+    @Before 
+    public void before(){
+    	usr = new User(7, "Bei", "Chu" );
+    }
+
+    @Test
+    public void testUser (){
+    	assertEquals(usr.getName(),"Bei");
+    	assertEquals(usr.getFamilyName(),"Chu");
+    	assertEquals(usr.getNumber(), 7);
+    }
     
-    @Before
-    public void before() {
-        us = new User(1, "Sandra", "Chacon");
-    }
     @Test
-    public void testUser() {
-        assertEquals( us.getNumber(),1);
-        assertEquals(us.getName(),"Sandra");
-        assertEquals(us.getFamilyName(),"Chacon");
+    public void testFullName(){
+    	assertEquals(usr.fullName(),"Bei Chu");
     }
-
+    
     @Test
-    public void testFullName() {
-       assertEquals( us.fullName(),"Sandra Chacon");
+    public void testInitials(){
+    	assertEquals(usr.initials(),"B.");
     }
-
-    @Test
-    public void testInitials() {
-        assertEquals( us.initials(),"S.");
-    }
-    @Test
-    public void testGetNumber() {
-        assertEquals( us.getNumber(),1);
-    }
-
-    @Test
-    public void testGetName() {
-        assertEquals( us.getName(),"Sandra");
-    }
-
-    @Test
-    public void testGetFamilyName() {
-        assertEquals( us.getFamilyName(),"Chacon");
-    }
-
+    	
 }
+    
