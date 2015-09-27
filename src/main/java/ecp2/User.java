@@ -38,5 +38,17 @@ public class User {
     public String getFamilyName() {
         return this.familyName;
     }
+    
+    public String nombreLowerComas() {
+		char[] Nom = this.name.toCharArray();
+    	Nom[0] = Character.toUpperCase(Nom[0]);
+    	for (int i = 1; i < this.name.length(); i++) {
+    	Nom[i] = Character.toLowerCase(Nom[i]);
+    	}
+    	String NomS = String.valueOf(Nom);
+    	String Ape = (this.familyName).toLowerCase();
+    	String cadena = NomS + "," + Ape;
+    	return cadena;
+    }
 
 }

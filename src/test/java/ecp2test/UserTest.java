@@ -13,6 +13,8 @@ public class UserTest {
     
     private User usr;
     
+    private User us;
+    
     @Before 
     public void before(){
     	usr = new User(7, "Bei", "Chu" );
@@ -33,6 +35,11 @@ public class UserTest {
     @Test
     public void testInitials(){
     	assertEquals(usr.initials(),"B.");
+    }
+    
+    @Test
+    public void testNombreLowerComas() {
+    assertEquals(us.nombreLowerComas(),"Bei,chu");;
     }
     	
 }
