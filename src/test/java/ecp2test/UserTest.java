@@ -7,40 +7,43 @@ import org.junit.Test;
 
 import ecp2.User;
 
-
-
 public class UserTest {
-    
+
     private User usr;
-    
+
     private User us;
-    
-    @Before 
-    public void before(){
-    	usr = new User(7, "Bei", "Chu" );
+
+    @Before
+    public void before() {
+        usr = new User(7, "Bei", "Chu");
     }
 
     @Test
-    public void testUser (){
-    	assertEquals(usr.getName(),"Bei");
-    	assertEquals(usr.getFamilyName(),"Chu");
-    	assertEquals(usr.getNumber(), 7);
+    public void testUser() {
+        assertEquals(usr.getName(), "Bei");
+        assertEquals(usr.getFamilyName(), "Chu");
+        assertEquals(usr.getNumber(), 7);
     }
-    
+
     @Test
-    public void testFullName(){
-    	assertEquals(usr.fullName(),"Bei Chu");
+    public void testFullName() {
+        assertEquals(usr.fullName(), "Bei Chu");
     }
-    
+
     @Test
-    public void testInitials(){
-    	assertEquals(usr.initials(),"B.");
+    public void testInitials() {
+        assertEquals(usr.initials(), "B.");
     }
-    
+
     @Test
     public void testNombreLowerComas() {
-    assertEquals(us.nombreLowerComas(),"Bei,chu");;
+        assertEquals(us.nombreLowerComas(), "Bei,chu");
+        ;
     }
-    	
+
+    @Test
+    public void testFullNameUpper() {
+        assertEquals(usr.fullNameUpper(), "BEI CHU");
+    }
+
 }
-    

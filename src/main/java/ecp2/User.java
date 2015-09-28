@@ -13,7 +13,7 @@ public class User {
         this.name = this.format(name);
         this.familyName = this.format(familyName);
     }
-    
+
     private String format(String string) {
         string = string.trim();
         return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
@@ -38,17 +38,22 @@ public class User {
     public String getFamilyName() {
         return this.familyName;
     }
-    
+
     public String nombreLowerComas() {
-		char[] Nom = this.name.toCharArray();
-    	Nom[0] = Character.toUpperCase(Nom[0]);
-    	for (int i = 1; i < this.name.length(); i++) {
-    	Nom[i] = Character.toLowerCase(Nom[i]);
-    	}
-    	String NomS = String.valueOf(Nom);
-    	String Ape = (this.familyName).toLowerCase();
-    	String cadena = NomS + "," + Ape;
-    	return cadena;
+        char[] Nom = this.name.toCharArray();
+        Nom[0] = Character.toUpperCase(Nom[0]);
+        for (int i = 1; i < this.name.length(); i++) {
+            Nom[i] = Character.toLowerCase(Nom[i]);
+        }
+        String NomS = String.valueOf(Nom);
+        String Ape = (this.familyName).toLowerCase();
+        String cadena = NomS + "," + Ape;
+        return cadena;
+    }
+
+    public String fullNameUpper() {
+        String Nom = this.name +" "+ this.familyName;
+        return Nom.toUpperCase();
     }
 
 }
