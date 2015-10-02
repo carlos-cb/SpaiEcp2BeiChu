@@ -10,13 +10,13 @@ import org.junit.Test;
 public class PointTest {
     private Point pt;
     private Point pt2;
-    private Point pt3;
+    
 
     @Before
     public void before() {
         pt = new Point(2, 3, 4);
-        pt2 = new Point(2);
-        pt3 = new Point(2, 3);
+        pt2 = new Point(1);
+       
     }
 
     @Test
@@ -24,13 +24,17 @@ public class PointTest {
         assertEquals( pt.getX(),2);
         assertEquals( pt.getY(),3);
         assertEquals( pt.getZ(),4);
+        assertEquals(pt2.getX(),1);
+        assertEquals(pt2.getY(),1);
+        assertEquals(pt2.getZ(),1);
     }
 
     @Test
     public void testPointInt() {
-        assertEquals( pt2.getX(),2);
-        assertEquals( pt2.getY(),2);
-        assertEquals( pt2.getZ(),2);
+    	pt = new Point();
+        assertEquals( pt.getX(),0);
+        assertEquals(pt.getY(),0);
+        assertEquals( pt.getZ(),0);
     }
 
     @Test
@@ -43,12 +47,12 @@ public class PointTest {
 
     @Test
     public void testModule() {
-        assertEquals(5.3851, pt.module(), 10e-5);
+    	 assertEquals(pt.module(),5.3851, 10e-5);
     }
 
     @Test
     public void testPhase() {
-        assertEquals(0.9828, pt.phase(), 10e-5);
+    	assertEquals(pt.phase(),0.9828,10e-5);
     }
 
     @Test
@@ -76,9 +80,9 @@ public class PointTest {
     
     @Test
     public void TestLimit(){
-    pt3 = new Point(-2, 200);
-    assertEquals(0, pt3.getX());
-    assertEquals(100, pt3.getY());
+    	pt = new Point(-2, 200, 0);
+    	assertEquals(0, pt.getX());
+    	assertEquals(100, pt.getY());
     }
 
 }

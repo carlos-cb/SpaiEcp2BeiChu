@@ -3,27 +3,29 @@ package ecp2;
 public class Point {
     
     private int x, y, z;
-    
-    private int a, b;
-    
-    public Point(int a, int b) {
-        this.a = limitar(a);
-        this.b = limitar(b);
-    }
-
+       
     public Point(int x, int y, int z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    	this.x = limitar(x);
+        this.y = limitar(y);
+        this.z = limitar(z);
     }
 
-    public Point(int xyz) {
+       public Point(int xyz) {
         this(xyz, xyz, xyz);
     }
 
     public Point() {
         this(0, 0, 0);
     }
+    
+    private int limitar(int coord) {
+		if(coord < 0){
+		coord = 0;
+		} else if(coord > 100){
+		coord = 100;
+		}
+		return coord;
+	}
 
     public double module() {
         return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
@@ -68,13 +70,6 @@ public class Point {
         return "Point[" + x + "," + y + "," + z + "]";
     }
 	
-	private int limitar(int coord) {
-		if(coord < 0){
-		coord = 0;
-		} else if(coord > 100){
-		coord = 100;
-		}
-		return coord;
-	}
+	
     
 }
