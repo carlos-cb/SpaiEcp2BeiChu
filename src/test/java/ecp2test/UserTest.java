@@ -11,8 +11,6 @@ public class UserTest {
 
     private User usr;
 
-    private User us;
-
     @Before
     public void before() {
         usr = new User(7, "Bei", "Chu");
@@ -37,7 +35,7 @@ public class UserTest {
 
     @Test
     public void testNombreLowerComas() {
-        assertEquals(us.nombreLowerComas(), "Bei,chu");
+        assertEquals(usr.nombreLowerComas(), "Bei,chu");
         ;
     }
 

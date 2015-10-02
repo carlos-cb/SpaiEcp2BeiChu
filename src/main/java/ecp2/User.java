@@ -40,7 +40,7 @@ public class User {
     }
 
     public String nombreLowerComas() {
-        char[] Nom = this.name.toCharArray();
+    	char[] Nom = this.name.toCharArray();
         Nom[0] = Character.toUpperCase(Nom[0]);
         for (int i = 1; i < this.name.length(); i++) {
             Nom[i] = Character.toLowerCase(Nom[i]);
