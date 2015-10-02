@@ -15,6 +15,7 @@ public class FractionTest {
     @Before
     public void before() {
         fra = new Fraction(1, 2);
+        this.fraction = new Fraction(6, 3);
     }
 
     @Test
@@ -54,15 +55,10 @@ public class FractionTest {
     }
 
     @Test
-    public void testMay() {
-        Fraction frac1 = new Fraction(17, 5);
-        assertEquals(fraction.mayor(frac1), frac1);
-    }
-
-    @Test
-    public void testEquivalente() {
-        Fraction fr1 = new Fraction(3, 6);
-        assertEquals(fra.equivalente(fr1), true);
+    public void testMayor() {
+        Fraction fr1 = new Fraction(15, 3);
+        assertEquals(fraction.mayor(fr1), fr1);
+    
     }
 
 }
